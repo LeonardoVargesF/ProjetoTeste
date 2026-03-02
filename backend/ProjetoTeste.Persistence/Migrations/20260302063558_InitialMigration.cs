@@ -18,9 +18,9 @@ namespace ProjetoTeste.Persistence.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Codigo = table.Column<int>(type: "int", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fantasia = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    Fantasia = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Documento = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateModified = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -37,11 +37,11 @@ namespace ProjetoTeste.Persistence.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Codigo = table.Column<int>(type: "int", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CodBarras = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ValorVenda = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PesoBruto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PesoLiquido = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    CodBarras = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
+                    ValorVenda = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    PesoBruto = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
+                    PesoLiquido = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
